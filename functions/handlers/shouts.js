@@ -187,7 +187,7 @@ exports.deleteShout = (req, res) => {
             return res.status(404).json({error:"Shout not found"})
         }
         if(doc.data().userName !== req.user.userName){
-            res.status(403).json({error: Unauthorized})
+            res.status(403).json({error: "Unauthorized attempt to delete Shout."})
         } else{
             return document.delete()
         }
