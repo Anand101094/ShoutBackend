@@ -102,7 +102,7 @@ exports.commentonShout = (req, res) => {
 
 exports.likeShout = (req, res) => {
     const likeDocument = db.collection('likes').where('userName', '==', req.user.userName)
-        .where('shoutId', ' ==', req.params.shoutId).limit(1);
+        .where('shoutId', '==', req.params.shoutId).limit(1);
     const shoutDocument = db.doc(`/shouts/${req.params.shoutId}`)
 
     let shoutData = {}
@@ -143,7 +143,7 @@ exports.likeShout = (req, res) => {
 
 exports.unlikeShout = (req, res) => {
     const likeDocument = db.collection('likes').where('userName', '==', req.user.userName)
-        .where('shoutId', ' ==', req.params.shoutId).limit(1);
+        .where('shoutId', '==', req.params.shoutId).limit(1);
     const shoutDocument = db.doc(`/shouts/${req.params.shoutId}`)
 
     let shoutData = {}
